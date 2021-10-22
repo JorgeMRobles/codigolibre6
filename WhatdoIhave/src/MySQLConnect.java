@@ -6,12 +6,12 @@ Connection conn = null;
 public static Connection ConnectDb(){
 
     try{
-    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-    /*"C:\\Users\\WhatdoIhave\\quetengodb.accdb","root","" you replace it with your 
+    /*"C:\\Users\\WhatdoIhave\\quetengodb","root","" you replace it with your 
      * database's direction, XAMPP user, and XAMPP password
     as this form "direction, user, password" 
     */
-    Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\WhatdoIhave\\quetengodb.accdb","root","");
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection conn = DriverManager.getConnection("jdbc:mysql://Localhost/quetengodb","root","");
     return conn;
     }catch(Exception e){
     JOptionPane.showMessageDialog(null, e);
